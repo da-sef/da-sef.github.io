@@ -5,7 +5,7 @@
         DA-SEF
       </h1>
     </router-link>
-    <div class="skip"></div>
+    <div class="skip" />
     <router-link to="/gift">
       <span class="navbar-item">
         Make a Gift

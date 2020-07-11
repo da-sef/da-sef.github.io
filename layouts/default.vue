@@ -3,7 +3,7 @@
     <div>
       <Navbar />
     </div>
-    <router-view/>
+    <Nuxt />
   </div>
 </template>
 
@@ -15,7 +15,6 @@ export default {
     Navbar
   }
 }
-
 </script>
 
 <style>
@@ -55,6 +54,15 @@ a:hover, link:hover {
   text-decoration: underline;
 }
 
+.sef-btn {
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 3px;
+  background: var(--primary-swatch);
+  padding: var(--space-0) var(--space-1);
+}
+
 button {
   cursor: pointer;
 }
@@ -63,9 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-
 /* body */
-
 
 body {
   margin: 0;

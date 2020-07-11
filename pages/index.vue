@@ -1,17 +1,25 @@
 <template>
   <div class="home">
     <section class="landing-banner">
-      <h1 class="banner-title">STUDENT EMERGENCY FUND</h1>
+      <h1 class="banner-title">
+        STUDENT EMERGENCY FUND
+      </h1>
 
-      <h2 class="banner-subtitle">Your support provides critical help to students in need</h2>
+      <h2 class="banner-subtitle">
+        Your support provides critical help to students in need
+      </h2>
       <div class="action-buttons">
         <div class="btn-wrapper">
           <router-link to="/gift">
-            <Button text="MAKE A GIFT" />
+            <button class="sef-btn">
+              MAKE A GIFT
+            </button>
           </router-link>
         </div>
         <div class="btn-wrapper">
-          <Button text="REQUEST HELP" />
+          <button class="sef-btn">
+            REQUEST HELP
+          </button>
         </div>
       </div>
     </section>
@@ -19,10 +27,14 @@
       <div class="information-wrapper">
         <h1>Help in Critical Time</h1>
         <p>
-          During this unprecedented time of global uncertainty alumni andfriends are asking how to help DA-IICT students who are struggling to coversudden costs related to access to technology for online learning and otheremergency expenses. 
+          During this unprecedented time of global uncertainty alumni andfriends are asking how to help DA-IICT students who are struggling to coversudden costs related to access to technology for online learning and otheremergency expenses.
         </p>
         <p>
-We are deeply grateful for the outpouring of concern for ourstudents and your desire to help them in this global crisis. You can make animmediate difference today, for our students community with a gift of anyamount. Thank you now and always for all that you are doing to help our DA-IICTstudents.
+          We are deeply grateful for the outpouring of concern for our students
+          and your desire to help them in this global crisis. You can make
+          an immediate difference today, for our students community with a
+          gift of anyamount. Thank you now and always for all that you are
+          doing to help our DA-IICT students.
         </p>
         <Button text="MAKE A GIFT" />
       </div>
@@ -33,24 +45,25 @@ We are deeply grateful for the outpouring of concern for ourstudents and your de
         </p>
         <h3>Critical Resources</h3>
         <p>
-          The move to the virtual form of instruction deepens the
-socioeconomic divide as many students rely on campus resources to access
-technology and course materials. Helping students acquire basic
-e-infrastructure facilities (broadband internet, computer) is necessary
-to have access to their education.
+          The move to the virtual form of instruction deepens the socioeconomic
+          divide as many students rely on campus resources to access technology
+          and course materials. Helping students acquire basic e-infrastructure
+          facilities (broadband internet, computer) is necessary to have
+          access to their education.
         </p>
         <h3>Assistance in tuition</h3>
         <p>
-          Uncertainty in the job market affects students' families and
-leaves them questioning whether they can afford to pursue an education.
-This financial help gives them the opportunity to prioritize their future
-and pursue an education.
+          Uncertainty in the job market affects students' families and leaves
+          them questioning whether they can afford to pursue an education.
+          This financial help gives them the opportunity to prioritize their
+          future and pursue an education.
         </p>
         <h3>Basic Needs</h3>
         <p>
           Issues related to food, housing insecurity are worsened during
-times of crisis. Housing-insecure individuals can request grants from our
-student emergency fund to help fill the gaps when they need it most.
+          times of crisis. Housing-insecure individuals can request grants from
+          our student emergency fund to help fill the gaps when they need it
+          most.
         </p>
         <p><small><em>* this list is not exhaustive</em></small></p>
       </div>
@@ -59,13 +72,9 @@ student emergency fund to help fill the gaps when they need it most.
 </template>
 
 <script>
-import Button from "@/components/sef-btn.vue"
 
 export default {
-  name: 'Home',
-  components: {
-    Button
-  }
+  name: "Home"
 }
 </script>
 
