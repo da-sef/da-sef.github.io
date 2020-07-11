@@ -1,16 +1,60 @@
 <template>
   <div class="home">
-    <div class="landing-banner">
+    <section class="landing-banner">
       <h1 class="banner-title">STUDENT EMERGENCY FUND</h1>
 
       <h2 class="banner-subtitle">Your support provides critical help to students in need</h2>
-      <div>
-        <Button text="MAKE A GIFT" />
-        <Button text="REQUEST HELP" />
+      <div class="action-buttons">
+        <div class="btn-wrapper">
+          <router-link to="/gift">
+            <Button text="MAKE A GIFT" />
+          </router-link>
+        </div>
+        <div class="btn-wrapper">
+          <Button text="REQUEST HELP" />
+        </div>
       </div>
-    </div>
-    <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_FChrdBNKQtD9hm/view" data-text="Donate" data-color="#528FF0" data-size="large">
-    </div>
+    </section>
+    <section class="information">
+      <div class="information-wrapper">
+        <h1>Help in Critical Time</h1>
+        <p>
+          During this unprecedented time of global uncertainty alumni andfriends are asking how to help DA-IICT students who are struggling to coversudden costs related to access to technology for online learning and otheremergency expenses. 
+        </p>
+        <p>
+We are deeply grateful for the outpouring of concern for ourstudents and your desire to help them in this global crisis. You can make animmediate difference today, for our students community with a gift of anyamount. Thank you now and always for all that you are doing to help our DA-IICTstudents.
+        </p>
+        <Button text="MAKE A GIFT" />
+      </div>
+      <div class="information-wrapper">
+        <h1>Areas Student Emergency Fund will support*</h1>
+        <p>
+          Students who need support and assistance can submit a request
+        </p>
+        <h3>Critical Resources</h3>
+        <p>
+          The move to the virtual form of instruction deepens the
+socioeconomic divide as many students rely on campus resources to access
+technology and course materials. Helping students acquire basic
+e-infrastructure facilities (broadband internet, computer) is necessary
+to have access to their education.
+        </p>
+        <h3>Assistance in tuition</h3>
+        <p>
+          Uncertainty in the job market affects students' families and
+leaves them questioning whether they can afford to pursue an education.
+This financial help gives them the opportunity to prioritize their future
+and pursue an education.
+        </p>
+        <h3>Basic Needs</h3>
+        <p>
+          Issues related to food, housing insecurity are worsened during
+times of crisis. Housing-insecure individuals can request grants from our
+student emergency fund to help fill the gaps when they need it most.
+        </p>
+        <p><small><em>* this list is not exhaustive</em></small></p>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -26,15 +70,13 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  text-align: center;
-}
-
 .landing-banner {
-  height: 400px;
+  min-height: 400px;
   display: flex;
-  justify-content: center;
+  text-align: center;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 .banner-title {
@@ -44,6 +86,29 @@ export default {
 .banner-subtitle {
   color: var(--text-grey);
   margin: var(--space-0);
+  margin-bottom: var(--space-4);
+}
+
+.action-buttons {
+  display: flex;
+}
+
+.btn-wrapper {
+  margin: var(--space-0);
+}
+
+.information {
+  display: flex;
+  padding: var(--space-4) 0;
+  background: white;
+  min-height: 500px;
+  align-items: center;
+  box-shadow: 0px 0px 6px #e6e6e6;
+  flex-direction: column;
+}
+
+.information-wrapper {
+  width: 1000px;
   margin-bottom: var(--space-4);
 }
 </style>

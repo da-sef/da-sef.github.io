@@ -21,7 +21,6 @@ export default {
   border: none;
   font-weight: bold;
   border-radius: 3px;
-  margin: var(--space-0);
   background: var(--primary-swatch);
   padding: var(--space-0) var(--space-1);
 }

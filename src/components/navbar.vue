@@ -5,6 +5,22 @@
         DA-SEF
       </h1>
     </router-link>
+    <div class="skip"></div>
+    <router-link to="/gift">
+      <span class="navbar-item">
+        Make a Gift
+      </span>
+    </router-link>
+    <router-link to="/faq">
+      <span class="navbar-item">
+        FAQs
+      </span>
+    </router-link>
+    <router-link to="/request">
+      <span class="navbar-item">
+        Request Help
+      </span>
+    </router-link>
   </nav>
 </template>
 
@@ -22,5 +38,14 @@ nav {
 .navbar-brand {
   margin: 0;
   color: var(--text-black);
+}
+
+.skip {
+  flex: 1;
+}
+
+.navbar-item {
+  font-weight: bold;
+  margin-left: var(--space-1);
 }
 </style>
