@@ -36,7 +36,9 @@
           gift of anyamount. Thank you now and always for all that you are
           doing to help our DA-IICT students.
         </p>
-        <Button text="MAKE A GIFT" />
+        <button class="sef-btn">
+          MAKE A GIFT
+        </button>
       </div>
       <div class="information-wrapper">
         <h1>Areas Student Emergency Fund will support*</h1>

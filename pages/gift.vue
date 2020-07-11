@@ -103,6 +103,7 @@ const defaultOpt = {
 }
 
 export default {
+  name: "Gift",
   data(){
     return {
       razorpayLoaded: false,
