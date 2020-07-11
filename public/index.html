@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <script>
+      (function(){
+        var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+        if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+        s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+        rzp && rzp.init && rzp.init()}})();
+    </script>
     <!-- built files will be auto injected -->
   </body>
 </html>
