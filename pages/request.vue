@@ -16,11 +16,12 @@ export default {
   data(){
     return {
       auth: false,
-      verified: false
+      verified: false,
+      ui_render: false
     }
   },
   mounted(){
-    if(process.browser){
+    if(process.browser && !this.ui_render){
       const firebase = require("firebase/app")
       const firebaseui = require("firebaseui")
 
@@ -49,6 +50,7 @@ export default {
             console.log(currentUser.email)
 
             this.auth = true
+            this.ui_render = true
             return false
           }
         }

@@ -53,9 +53,11 @@ export default {
 .page-wrapper {
   grid-column-start: 2;
   grid-column-end: 3;
+  margin-bottom: var(--space-4);
 }
 
 a, .link {
+  outline: none;
   cursor: pointer;
   text-decoration: none;
   color: var(--primary-swatch);
