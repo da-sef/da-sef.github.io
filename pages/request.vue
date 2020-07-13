@@ -1,10 +1,12 @@
 <template>
   <div class="page">
-    <h1>Request</h1>
-    <div v-show="auth && !verified">
-      Please sign-in with daiict.ac.in domain name
+    <div class="page-wrapper">
+      <h1>Request</h1>
+      <div v-show="auth && !verified">
+        Please sign-in with daiict.ac.in domain name
+      </div>
+      <div id="firebaseui-auth-container" />
     </div>
-    <div id="firebaseui-auth-container" />
   </div>
 </template>
 

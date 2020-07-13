@@ -1,6 +1,6 @@
 <template>
-  <div class="gift-page">
-    <div class="wrapper">
+  <div class="page">
+    <div class="page-wrapper">
       <h2 class="title">
         Make a Gift
       </h2>
@@ -159,19 +159,6 @@ export default {
 </script>
 
 <style>
-.gift-page {
-  display: flex;
-  justify-content: center;
-}
-
-.wrapper {
-  width: 1000px;
-  display: flex;
-  padding: var(--space-1) 0;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .title {
   margin: var(--space-1) 0;
 }

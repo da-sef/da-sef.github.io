@@ -44,6 +44,17 @@ export default {
   color: var(--text-black);
 }
 
+.page {
+  display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: 10% auto 10%;
+}
+
+.page-wrapper {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
 a, .link {
   cursor: pointer;
   text-decoration: none;
