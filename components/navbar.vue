@@ -11,7 +11,7 @@
         Make a Gift
       </span>
     </router-link>
-    <router-link to="/faq">
+    <router-link to="/faqs">
       <span class="navbar-item">
         FAQs
       </span>

@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="page-wrapper">
-      <section class="landing-banner">
+      <div class="landing-banner">
         <h1 class="banner-title">
           STUDENT EMERGENCY FUND
         </h1>
@@ -17,12 +17,14 @@
             </router-link>
           </div>
           <div class="btn-wrapper">
-            <button class="sef-btn">
-              REQUEST HELP
-            </button>
+            <router-link to="/request">
+              <button class="sef-btn">
+                REQUEST HELP
+              </button>
+            </router-link>
           </div>
         </div>
-      </section>
+      </div>
       <section class="information">
         <div class="information-wrapper">
           <h1>Help in Critical Time</h1>
