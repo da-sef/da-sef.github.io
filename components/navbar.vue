@@ -2,7 +2,8 @@
   <nav>
     <router-link to="/">
       <h1 class="navbar-brand">
-        DA-SEF
+        <img class="logo" src="/da-logo.png">
+        <span>Student Emergency Fund</span>
       </h1>
     </router-link>
     <div class="skip" />
@@ -25,6 +26,10 @@
 </template>
 
 <style scoped>
+.logo {
+  width: 50px;
+}
+
 nav {
   height: 50px;
   display: flex;
@@ -37,6 +42,9 @@ nav {
 
 .navbar-brand {
   margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: var(--size-4);
   color: var(--text-black);
 }
 
