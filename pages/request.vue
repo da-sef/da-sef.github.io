@@ -5,17 +5,22 @@
         <h1>Emergency Fund Application</h1>
       </div>
       <section class="main-content">
-        <h2>
+        <h2 v-show="!ui_rendered">
           Sign-in with daiict.ac.in domain to avail the funds.
         </h2>
         <!--
           <div id="firebaseui-auth-container" />
         -->
-        <div v-show="ui_rendered && !verified">
+        <div v-show="ui_rendered && !verified" hidden>
           Sign-in with daiict.ac.in domain to avail the funds.
         </div>
         <div class="request-form">
           <form>
+            <h4
+              class="form-label"
+            >
+              Personal Information
+            </h4>
             <input
               type="text"
               placeholder="SID"
@@ -49,13 +54,135 @@
               placeholder="Local Address"
               class="form-field"
               :value="email"
-            ><br>
+            >
             <input
               type="text"
               placeholder="Permanent Address"
               class="form-field"
               :value="email"
             ><br>
+            <h4
+              class="form-label"
+            >
+              Have you applied for any scholarship this year?
+            </h4>
+            <label>
+              <input type="radio" value="yes"> Yes
+            </label>
+            <label>
+              <input type="radio" value="no"> No
+            </label><br>
+            <h4
+              class="form-label"
+            >
+              Have you received funds from the Student Emergency Fund before?
+            </h4>
+            <label>
+              <input type="radio" value="yes"> Yes
+            </label>
+            <label>
+              <input type="radio" value="no"> No
+            </label><br>
+            <h4
+              class="form-label"
+            >
+              Amount of funds requested from Student Emergency Fund (in Indian Rupee)
+            </h4>
+            <input
+              type="number"
+              placeholder="Amount"
+              class="form-field"
+              required
+            >
+            <span>INR</span>
+            <br>
+            <h4
+              class="form-label"
+            >
+              Please describe what led to your emergent financial need, providing as much detail as you arecomfortable providing.
+            </h4>
+            <textarea
+              rows="4"
+              class="form-textarea"
+            />
+            <br>
+            <h4
+              class="form-label"
+            >
+              Please explain in detail what the funds will be used for.
+            </h4>
+            <textarea
+              rows="4"
+              class="form-textarea"
+            />
+            <br>
+            <h4
+              class="form-label"
+            >
+              Please describe the specific impact of the emergency on your ability to be a student.
+            </h4>
+            <textarea
+              rows="4"
+              class="form-textarea"
+            />
+            <br>
+            <h4
+              class="form-label"
+            >
+              Please describe your efforts to obtain assistance to address your needs through other sources(family, friends, campus/community organizations, etc.)
+            </h4>
+            <textarea
+              rows="4"
+              class="form-textarea"
+            />
+            <br>
+            <h4
+              class="form-label"
+            >
+              What do you plan to do to return to financial stability after receiving help to prevent a pattern?
+            </h4>
+            <textarea
+              rows="4"
+              class="form-textarea"
+            /><br>
+            <div class="mandatory-checkboxes">
+              <label class="form-checkbox">
+                <input type="checkbox" required>
+                <span class="checkbox-text">
+                  I understand that I may not be eligible for an award from the Student Emergency Fund, and will respect that decision.
+                </span>
+              </label><br>
+              <label class="form-checkbox">
+                <input type="checkbox" required>
+                <span class="checkbox-text">
+                  I agree to use any award of funds for the requested purpose(s) only and I understand that this is a one-time grant of funds.
+                </span>
+              </label><br>
+              <label class="form-checkbox">
+                <input type="checkbox" required>
+                <span class="checkbox-text">
+                  I agree to use any award of funds for the requested purpose(s) only and I understand that this is a one-time grant of funds.
+                </span>
+              </label><br>
+              <label class="form-checkbox">
+                <input type="checkbox" required>
+                <span class="checkbox-text">
+                  I affirm that the information that I have provided on this application and any additional information that I provide in support of my request for emergency funds is complete, accurate and true, to the best of my knowledge. I also understand that providing false information may result in revocation of any award of emergency funds and/or referral to the Disciplinary Action Committee(DAC), DA-IICT for formal disciplinary action.
+                </span>
+              </label><br>
+              <label class="form-checkbox">
+                <input type="checkbox" required>
+                <span class="checkbox-text">
+                  I understand that this application falls under the non-urgent category and will be received during normal business hours (M-F 8-5).
+                </span>
+              </label>
+            </div>
+            <div class="form-attachment">
+              <span class="attachment-text">
+                Attachment [Supporting Documentation- Photos, video, email, and other supporting documents may be attached below.]
+              </span>
+              <input type="file" required><br>
+            </div>
           </form>
         </div>
       </section>
@@ -158,11 +285,35 @@ export default {
   padding: var(--space-4);
 }
 
-.form-field {
+.form-field, .form-textarea {
   background: white;
   padding: var(--space-0);
   margin: var(--space-0) 0;
   margin-right: var(--space-0);
   border: 1px solid var(--border-grey);
+}
+
+.form-label {
+  margin: var(--space-1) 0 var(--space-0) 0;
+}
+
+.form-textarea {
+  width: 100%;
+  resize: none;
+}
+
+.mandatory-checkboxes, .form-attachment {
+  margin: var(--space-1) 0;
+  font-weight: bold;
+}
+
+.form-checkbox {
+  display: inline-block;
+  margin: var(--space-0) 0;
+}
+
+.attachment-text {
+  display: inline-block;
+  margin: var(--space-0) 0;
 }
 </style>
