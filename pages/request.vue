@@ -25,41 +25,44 @@
               type="text"
               placeholder="SID"
               class="form-field"
+              required
             ><br>
             <input
               type="text"
               placeholder="Full Name"
               class="form-field"
+              required
             ><br>
             <input
               type="text"
               placeholder="DA-IICT Email Id"
               class="form-field"
               :value="email"
+              required
             ><br>
             <input
               type="text"
               placeholder="Personal Contact Number"
               class="form-field"
-              :value="email"
+              required
             >
             <input
               type="text"
               placeholder="Guardian Contact Number"
               class="form-field"
-              :value="email"
+              required
             ><br>
             <input
               type="text"
               placeholder="Local Address"
               class="form-field"
-              :value="email"
+              required
             >
             <input
               type="text"
               placeholder="Permanent Address"
               class="form-field"
-              :value="email"
+              required
             ><br>
             <h4
               class="form-label"
@@ -67,10 +70,18 @@
               Have you applied for any scholarship this year?
             </h4>
             <label>
-              <input type="radio" value="yes"> Yes
+              <input
+                name="scholarship"
+                type="radio"
+                value="yes"
+              > Yes
             </label>
             <label>
-              <input type="radio" value="no"> No
+              <input
+                name="scholarship"
+                type="radio"
+                value="no"
+              > No
             </label><br>
             <h4
               class="form-label"
@@ -78,10 +89,18 @@
               Have you received funds from the Student Emergency Fund before?
             </h4>
             <label>
-              <input type="radio" value="yes"> Yes
+              <input
+                name="sef"
+                type="radio"
+                value="yes"
+              > Yes
             </label>
             <label>
-              <input type="radio" value="no"> No
+              <input
+                name="sef"
+                type="radio"
+                value="no"
+              > No
             </label><br>
             <h4
               class="form-label"
