@@ -2,7 +2,7 @@
   <div class="page">
     <div class="page-wrapper">
       <div class="landing-banner">
-        <h1>Request Help</h1>
+        <h1>Emergency Fund Application</h1>
       </div>
       <section class="main-content">
         <h2>
@@ -13,6 +13,50 @@
         -->
         <div v-show="ui_rendered && !verified">
           Sign-in with daiict.ac.in domain to avail the funds.
+        </div>
+        <div class="request-form">
+          <form>
+            <input
+              type="text"
+              placeholder="SID"
+              class="form-field"
+            ><br>
+            <input
+              type="text"
+              placeholder="Full Name"
+              class="form-field"
+            ><br>
+            <input
+              type="text"
+              placeholder="DA-IICT Email Id"
+              class="form-field"
+              :value="email"
+            ><br>
+            <input
+              type="text"
+              placeholder="Personal Contact Number"
+              class="form-field"
+              :value="email"
+            >
+            <input
+              type="text"
+              placeholder="Guardian Contact Number"
+              class="form-field"
+              :value="email"
+            ><br>
+            <input
+              type="text"
+              placeholder="Local Address"
+              class="form-field"
+              :value="email"
+            ><br>
+            <input
+              type="text"
+              placeholder="Permanent Address"
+              class="form-field"
+              :value="email"
+            ><br>
+          </form>
         </div>
       </section>
     </div>
@@ -112,5 +156,13 @@ export default {
 .main-content {
   background: white;
   padding: var(--space-4);
+}
+
+.form-field {
+  background: white;
+  padding: var(--space-0);
+  margin: var(--space-0) 0;
+  margin-right: var(--space-0);
+  border: 1px solid var(--border-grey);
 }
 </style>
