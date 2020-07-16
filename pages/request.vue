@@ -1,27 +1,44 @@
 <template>
   <div class="page">
     <div class="page-wrapper">
-      <h1>Request</h1>
-      <div v-show="auth && !verified">
-        Please sign-in with daiict.ac.in domain name
+      <div class="landing-banner">
+        <h1>Request Help</h1>
       </div>
-      <div id="firebaseui-auth-container" />
+      <section class="main-content">
+        <h2>
+          Sign-in with daiict.ac.in domain to avail the funds.
+        </h2>
+        <!--
+          <div id="firebaseui-auth-container" />
+        -->
+        <div v-show="ui_rendered && !verified">
+          Sign-in with daiict.ac.in domain to avail the funds.
+        </div>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex"
 
 export default {
   data(){
     return {
-      auth: false,
-      verified: false,
-      ui_render: false
+      ui_rendered: true
+    }
+  },
+  computed: {
+    ...mapState([
+      "email",
+      "loggedIn"
+    ]),
+    verified(){
+      return false
     }
   },
   mounted(){
-    if(process.browser && !this.ui_render){
+    if(process.browser && !this.loggedIn && !this.ui_rendered){
       const firebase = require("firebase/app")
       const firebaseui = require("firebaseui")
 
@@ -47,10 +64,9 @@ export default {
         ],
         callbacks: {
           signInSuccessWithAuthResult: (currentUser, credential, redirectUrl) => {
-            console.log(currentUser.email)
+            this.$store.dispatch("user/setUser", currentUser.email)
+            this.ui_rendered = true
 
-            this.auth = true
-            this.ui_render = true
             return false
           }
         }
@@ -71,3 +87,30 @@ export default {
   }
 }
 </script>
+
+<style>
+/* Firebase Override */
+#firebaseui-auth-container {
+  width: 220px;
+}
+
+.firebaseui-card-content {
+  padding: 0px;
+}
+</style>
+
+<style scoped>
+.landing-banner {
+  min-height: 300px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-content {
+  background: white;
+  padding: var(--space-4);
+}
+</style>

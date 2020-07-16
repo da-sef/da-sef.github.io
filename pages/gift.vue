@@ -158,7 +158,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .title {
   margin: var(--space-1) 0;
 }
