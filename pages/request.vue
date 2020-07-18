@@ -240,8 +240,7 @@ export default {
   },
   computed: {
     ...mapState([
-      "email",
-      "loggedIn"
+      "user"
     ]),
     verified(){
       return false
@@ -266,7 +265,16 @@ export default {
       })
     },
     upload(file){
-      console.log(file)
+      const storageRef = this.$fireStorage.ref()
+      const fileRef = storageRef.child(`${this.user.email}/${file.name}`)
+
+      fileRef.put(file)
+        .then((snapshot) => {
+          console.log(snapshot)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   },
   head(){
