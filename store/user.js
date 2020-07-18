@@ -4,13 +4,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-  SET_USER(state, email){
-    state.email = email
-  }
-}
-
-export const actions = {
-  setUser({ dispatch, commit }, email){
-    commit("SET_USER", email)
+  ON_AUTH_STATE_CHANGED_MUTATION: (state, { authUser, claims }) => {
+    // Do this:
+    state.email = authUser.email
   }
 }

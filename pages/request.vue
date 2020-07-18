@@ -8,9 +8,6 @@
         <h2 v-show="!ui_rendered">
           Sign-in with daiict.ac.in domain to avail the funds.
         </h2>
-        <!--
-          <div id="firebaseui-auth-container" />
-        -->
         <div v-show="ui_rendered && !verified" hidden>
           Sign-in with daiict.ac.in domain to avail the funds.
         </div>
@@ -200,7 +197,11 @@
               <span class="attachment-text">
                 Attachment [Supporting Documentation- Photos, video, email, and other supporting documents may be attached below.]
               </span>
-              <input type="file" required><br>
+              <input
+                type="file"
+                multiple
+                @change="fileChange"
+              ><br>
             </div>
           </form>
         </div>
@@ -215,7 +216,26 @@ import { mapState } from "vuex"
 export default {
   data(){
     return {
-      ui_rendered: true
+      uploadTask: "",
+      ui_rendered: true,
+      form: {
+        sid: "",
+        full_name: "",
+        email_id: "",
+        personal_number: "",
+        guardian_number: "",
+        local_address: "",
+        permanent_address: "",
+        scholarship_this_year: "",
+        sef_before: "",
+        amount: 0,
+        q_descneed: "",
+        q_whatfor: "",
+        q_impact: "",
+        q_efforts: "",
+        q_plan: "",
+        attachment_file: ""
+      }
     }
   },
   computed: {
@@ -228,41 +248,25 @@ export default {
     }
   },
   mounted(){
-    if(process.browser && !this.loggedIn && !this.ui_rendered){
-      const firebase = require("firebase/app")
-      const firebaseui = require("firebaseui")
+    const provider = new this.$fireAuthObj.GoogleAuthProvider()
 
-      require("firebase/auth")
+    this.$fireAuth.signInWithPopup(provider).then((result) => {
+      console.log(result)
+    }).catch((error) => {
+      console.log(error)
+    })
+  },
+  methods: {
+    fileChange(e){
+      console.log(e.target.files[0])
+      const fileList = e.target.files
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyDcaguozmiEDHdLmKZMwPH2rPgTN5SvVjg",
-        authDomain: "dasef-68ba5.firebaseapp.com",
-        databaseURL: "https://dasef-68ba5.firebaseio.com",
-        projectId: "dasef-68ba5",
-        storageBucket: "dasef-68ba5.appspot.com",
-        messagingSenderId: "923884417325",
-        appId: "1:923884417325:web:47eeba7214573701cea3a4",
-        measurementId: "G-YLFQYS59N1"
-      }
-
-      firebase.initializeApp(firebaseConfig)
-
-      const ui = new firebaseui.auth.AuthUI(firebase.auth())
-      ui.start("#firebaseui-auth-container", {
-        signInOptions: [
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        ],
-        callbacks: {
-          signInSuccessWithAuthResult: (currentUser, credential, redirectUrl) => {
-            this.$store.dispatch("user/setUser", currentUser.email)
-            this.ui_rendered = true
-
-            return false
-          }
-        }
-      }, (data) => {
-        console.log(data)
+      Array.from(Array(fileList.length).keys()).map((x) => {
+        this.upload(fileList[x])
       })
+    },
+    upload(file){
+      console.log(file)
     }
   },
   head(){

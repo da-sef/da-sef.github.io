@@ -62,12 +62,33 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/firebase'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {},
+  firebase: {
+    config: {
+      apiKey: "AIzaSyDcaguozmiEDHdLmKZMwPH2rPgTN5SvVjg",
+      authDomain: "dasef-68ba5.firebaseapp.com",
+      databaseURL: "https://dasef-68ba5.firebaseio.com",
+      projectId: "dasef-68ba5",
+      storageBucket: "dasef-68ba5.appspot.com",
+      messagingSenderId: "923884417325",
+      appId: "1:923884417325:web:47eeba7214573701cea3a4",
+      measurementId: "G-YLFQYS59N1"
+    },
+    services: {
+      auth: {
+        persistence: 'local',
+        onAuthStateChangedMutation: 'user/ON_AUTH_STATE_CHANGED_MUTATION',
+        ssr: false
+      },
+      storage: true
+    }
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
