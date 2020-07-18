@@ -202,6 +202,7 @@
                 multiple
                 @change="fileChange"
               ><br>
+              <FileUpload />
             </div>
           </form>
         </div>
@@ -212,8 +213,12 @@
 
 <script>
 import { mapState } from "vuex"
+import FileUpload from "@/components/file-upload.vue"
 
 export default {
+  components: {
+    FileUpload
+  },
   data(){
     return {
       uploadTask: "",
