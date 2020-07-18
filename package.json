@@ -9,13 +9,18 @@
     "export": "nuxt export",
     "serve": "nuxt serve",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "lint": "npm run lint:js",
+    "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/firebase": "^6.1.0",
+    "filepond": "^4.18.0",
+    "filepond-plugin-file-validate-type": "^1.2.5",
+    "filepond-plugin-image-preview": "^4.6.4",
     "firebase": "^7.16.0",
     "nuxt": "^2.13.0",
+    "vue-filepond": "^6.0.2",
     "vue-script2": "^2.1.0"
   },
   "devDependencies": {
