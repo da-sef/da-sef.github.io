@@ -290,17 +290,6 @@ export default {
 }
 </script>
 
-<style>
-/* Firebase Override */
-#firebaseui-auth-container {
-  width: 220px;
-}
-
-.firebaseui-card-content {
-  padding: 0px;
-}
-</style>
-
 <style scoped>
 .landing-banner {
   min-height: 300px;

@@ -15,7 +15,6 @@
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/firebase": "^6.1.0",
     "firebase": "^7.16.0",
-    "firebaseui": "^4.5.2",
     "nuxt": "^2.13.0",
     "vue-script2": "^2.1.0"
   },
