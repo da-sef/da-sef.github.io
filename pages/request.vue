@@ -251,7 +251,7 @@ export default {
     const provider = new this.$fireAuthObj.GoogleAuthProvider()
 
     this.$fireAuth.signInWithPopup(provider).then((result) => {
-      console.log(result)
+      this.$store.dispatch("user/setUser", result.user)
     }).catch((error) => {
       console.log(error)
     })

@@ -81,11 +81,7 @@ export default {
       measurementId: "G-YLFQYS59N1"
     },
     services: {
-      auth: {
-        persistence: 'local',
-        onAuthStateChangedMutation: 'user/ON_AUTH_STATE_CHANGED_MUTATION',
-        ssr: false
-      },
+      auth: true,
       storage: true
     }
   },
