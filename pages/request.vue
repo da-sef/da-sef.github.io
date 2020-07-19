@@ -215,7 +215,7 @@
               <span class="attachment-text">
                 Attachment [Supporting Documentation- Photos, video, email, and other supporting documents may be attached below.]
               </span>
-              <FileUpload />
+              <FileUpload @filesUpdate="fileUpdateHandler" />
             </div>
             <button
               class="sef-btn"
@@ -258,7 +258,7 @@ export default {
         q_impact: "",
         q_efforts: "",
         q_plan: "",
-        attachment_file: ""
+        attachments: []
       }
     }
   },
@@ -272,7 +272,7 @@ export default {
   },
   methods: {
     submit(){
-      console.log({ ...this.form })
+      console.log({ ...this.form, ...this.user })
     },
     google_sign_in(){
       const provider = new this.$fireAuthObj.GoogleAuthProvider()
@@ -291,29 +291,8 @@ export default {
         console.log(error)
       })
     },
-    fileChange(e){
-      console.log(e.target.files[0])
-      const fileList = e.target.files
-
-      Array.from(Array(fileList.length).keys()).map((x) => {
-        this.upload(fileList[x])
-      })
-    },
-    upload(file){
-      if(this.user.loggedIn){
-        const storageRef = this.$fireStorage.ref()
-        const fileRef = storageRef.child(`${this.user.email}/${file.name}`)
-
-        fileRef.put(file)
-          .then((snapshot) => {
-            console.log(snapshot)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-      } else {
-        console.log("Please log in")
-      }
+    fileUpdateHandler(files){
+      this.attachments = files
     }
   },
   head(){

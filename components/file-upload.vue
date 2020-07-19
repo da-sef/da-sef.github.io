@@ -55,6 +55,7 @@ export default {
         }
 
         this.$emit("input", val)
+        this.$emit("filesUpdate", val)
       },
       deep: true
     }
