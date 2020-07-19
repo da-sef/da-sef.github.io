@@ -5,10 +5,15 @@
         <h1>Emergency Fund Application</h1>
       </div>
       <section class="main-content">
-        <h2 v-show="!ui_rendered">
-          Sign-in with daiict.ac.in domain to avail the funds.
-        </h2>
-        <div class="request-form">
+        <div v-show="!user.loggedIn" class="sign-in-wrapper">
+          <h2>
+            Sign-in with daiict.ac.in domain to avail the funds.
+          </h2>
+          <button class="google-signin-btn" @click="google_sign_in">
+            <img src="/google/btn_google_signin_light_normal_web.png">
+          </button>
+        </div>
+        <div v-if="user.loggedIn" class="request-form">
           <form @submit.prevent="submit">
             <h4
               class="form-label"
@@ -265,19 +270,19 @@ export default {
       return false
     }
   },
-  mounted(){
-    const provider = new this.$fireAuthObj.GoogleAuthProvider()
-
-    this.$fireAuth.signInWithPopup(provider).then((result) => {
-      this.$store.dispatch("user/setUser", result.user)
-      this.form.email_id = result.user.email
-    }).catch((error) => {
-      console.log(error)
-    })
-  },
   methods: {
     submit(){
       console.log({ ...this.form })
+    },
+    google_sign_in(){
+      const provider = new this.$fireAuthObj.GoogleAuthProvider()
+
+      this.$fireAuth.signInWithPopup(provider).then((result) => {
+        this.$store.dispatch("user/setUser", result.user)
+        this.form.email_id = result.user.email
+      }).catch((error) => {
+        console.log(error)
+      })
     },
     fileChange(e){
       console.log(e.target.files[0])
@@ -325,6 +330,13 @@ export default {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+}
+
+.google-signin-btn {
+  border: none;
+  padding: 0;
+  background: none;
+  margin-top: var(--space-0);
 }
 
 .main-content {
