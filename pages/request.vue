@@ -128,7 +128,7 @@
             <h4
               class="form-label"
             >
-              Please describe what led to your emergent financial need, providing as much detail as you arecomfortable providing.
+              Please describe what led to your emergent financial need, providing as much detail as you are comfortable providing.
             </h4>
             <textarea
               v-model="form.q_descneed"
@@ -161,7 +161,7 @@
             <h4
               class="form-label"
             >
-              Please describe your efforts to obtain assistance to address your needs through other sources(family, friends, campus/community organizations, etc.)
+              Please describe your efforts to obtain assistance to address your needs through other sources (family, friends, campus/community organizations, etc.)
             </h4>
             <textarea
               v-model="form.q_efforts"
@@ -195,13 +195,7 @@
               <label class="form-checkbox">
                 <input type="checkbox" required>
                 <span class="checkbox-text">
-                  I agree to use any award of funds for the requested purpose(s) only and I understand that this is a one-time grant of funds.
-                </span>
-              </label><br>
-              <label class="form-checkbox">
-                <input type="checkbox" required>
-                <span class="checkbox-text">
-                  I affirm that the information that I have provided on this application and any additional information that I provide in support of my request for emergency funds is complete, accurate and true, to the best of my knowledge. I also understand that providing false information may result in revocation of any award of emergency funds and/or referral to the Disciplinary Action Committee(DAC), DA-IICT for formal disciplinary action.
+                  I affirm that the information that I have provided in this application and any additional information that I provide in support of my request for emergency funds is complete, accurate and true, to the best of my knowledge. I also understand that providing false information may result in revocation of any award of emergency funds and/or referral to the Disciplinary Action Committee (DAC), DA-IICT for formal disciplinary action.
                 </span>
               </label><br>
               <label class="form-checkbox">

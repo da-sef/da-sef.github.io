@@ -29,13 +29,13 @@
         <div class="information-wrapper">
           <h1>Help in Critical Time</h1>
           <p>
-            During this unprecedented time of global uncertainty alumni andfriends are asking how to help DA-IICT students who are struggling to coversudden costs related to access to technology for online learning and otheremergency expenses.
+            During this unprecedented time of global uncertainty alumni and friends are asking how to help DA-IICT students who are struggling to cover sudden costs related to access to technology for online learning and other emergency expenses.
           </p>
           <p>
             We are deeply grateful for the outpouring of concern for our students
             and your desire to help them in this global crisis. You can make
             an immediate difference today, for our students community with a
-            gift of anyamount. Thank you now and always for all that you are
+            gift of any amount. Thank you now and always for all that you are
             doing to help our DA-IICT students.
           </p>
           <button class="sef-btn">
@@ -45,11 +45,11 @@
         <div class="information-wrapper">
           <h1>Areas Student Emergency Fund will support*</h1>
           <p>
-            Students who need support and assistance can submit a request
+            Students who need support and assistance can submit a request.
           </p>
           <h3>Critical Resources</h3>
           <p>
-            The move to the virtual form of instruction deepens the socioeconomic
+            The move to the virtual form of instruction deepens the socio-economic
             divide as many students rely on campus resources to access technology
             and course materials. Helping students acquire basic e-infrastructure
             facilities (broadband internet, computer) is necessary to have
