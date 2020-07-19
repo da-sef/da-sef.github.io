@@ -34,7 +34,7 @@
               type="text"
               placeholder="DA-IICT Email Id"
               class="form-field"
-              :value="email"
+              :value="form.email"
               required
             ><br>
             <input
@@ -197,11 +197,6 @@
               <span class="attachment-text">
                 Attachment [Supporting Documentation- Photos, video, email, and other supporting documents may be attached below.]
               </span>
-              <input
-                type="file"
-                multiple
-                @change="fileChange"
-              ><br>
               <FileUpload />
             </div>
           </form>
@@ -270,16 +265,20 @@ export default {
       })
     },
     upload(file){
-      const storageRef = this.$fireStorage.ref()
-      const fileRef = storageRef.child(`${this.user.email}/${file.name}`)
+      if(this.user.loggedIn){
+        const storageRef = this.$fireStorage.ref()
+        const fileRef = storageRef.child(`${this.user.email}/${file.name}`)
 
-      fileRef.put(file)
-        .then((snapshot) => {
-          console.log(snapshot)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+        fileRef.put(file)
+          .then((snapshot) => {
+            console.log(snapshot)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      } else {
+        console.log("Please log in")
+      }
     }
   },
   head(){

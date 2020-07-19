@@ -1,52 +1,150 @@
 <template>
-  <div id="file-upload">
-    <file-pond
-      ref="pond"
-      name="test"
-      label-idle="Drop files here..."
-      :allow-multiple="true"
-      accepted-file-types="image/jpeg, image/png"
-      server="/api"
-      :files="myFiles"
+  <div>
+    <FilePond
+      ref="input"
+      name="file"
+      :allow-multiple="allowMultiple"
+      allow-file-type-validation="true"
+      accepted-file-types="application/pdf"
+      :server="{ process, revert, restore, load, fetch }"
+      :files="files2"
       @init="handleFilePondInit"
     />
+    <p v-if="rule" class="caption red--text">
+      Archivo requerido
+    </p>
   </div>
 </template>
 
 <script>
-// Import Vue FilePond
+import { mapState } from "vuex"
 import vueFilePond from "vue-filepond"
-
-// Import FilePond styles
+import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type"
 import "filepond/dist/filepond.min.css"
 
-// Import FilePond plugins
-// Please note that you need to install these plugins separately
-
-// Import image preview plugin styles
-import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css"
-
-// Import image preview and file type validation plugins
-import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type"
-import FilePondPluginImagePreview from "filepond-plugin-image-preview"
-
-// Create component
-const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginImagePreview)
+const FilePond = vueFilePond(FilePondPluginFileValidateType)
 
 export default {
-  name: "App",
+  name: "FileUpload",
   components: {
     FilePond
   },
   data(){
-    return { myFiles: ["cat.jpeg"] }
+    return {
+      first: true,
+      files: [], // files uploaded, input
+      files2: [] // all files
+    }
+  },
+  computed: {
+    allowMultiple(){
+      return true
+    },
+    rule(){
+      return this.required && !this.first && this.files.length === 0
+    },
+    ...mapState([
+      "user"
+    ])
+  },
+  watch: {
+    files: {
+      handler(val, oldVal){
+        if(this.first){
+          this.first = false
+        }
+
+        this.$emit("input", val)
+      },
+      deep: true
+    }
   },
   methods: {
-    handleFilePondInit(){
-      console.log("FilePond has initialized")
+    process(fieldName, file, metadata, load, error, progress, abort){
+      const self = this
 
-      // FilePond instance methods are available on `this.$refs.pond`
+      try {
+        progress(true, 0, 1024)
+        const uploadTask = this.$fireStorage.ref()
+          .child(`${this.user.email}/${file.name}`)
+          .put(file, metadata)
+
+        uploadTask.on(
+          this.$fireStorageObj.TaskEvent.STATE_CHANGED,
+          function(snapshot){
+            progress(true, snapshot.bytesTransferred, snapshot.totalBytes)
+          },
+          function(e){
+            console.log(e)
+            self.handleError(error, e)
+          },
+          function(){
+            load(uploadTask.snapshot.ref.fullPath)
+            self.files.push(uploadTask.snapshot.ref.fullPath)
+          }
+        )
+
+        return {
+          abort(){
+            abort()
+            uploadTask.cancel()
+          }
+        }
+      } catch(e){
+        console.log(e)
+        this.handleError(error, e)
+
+        return {
+          abort(){
+            abort()
+          }
+        }
+      }
+    },
+    revert(uniqueFileId, load, error){
+      const self = this
+      console.log("revert")
+
+      const desertRef = this.$fireStore.ref().child(uniqueFileId)
+      desertRef
+        .delete()
+        .then(function(){
+          const index = self.files.indexOf(uniqueFileId)
+          if(index > -1){
+            self.files.splice(index, 1)
+          }
+
+          load()
+        })
+        .catch(function(e){
+          this.handleError(error, e)
+        })
+    },
+    load(uniqueFileId, load, error){
+      console.log("load")
+      error()
+    },
+    fetch(url, load, error, progress, abort, headers){
+      console.log("fetch")
+      error("Solo archivos locales")
+    },
+    restore(uniqueFileId, load, error, progress, abort, headers){
+      console.log("restore")
+      error()
+    },
+    handleError(error, e){
+      switch(e.code){
+      case "storage/canceled":
+        break
+      default: error(e.message)
+      }
+    },
+    handleFilePondInit(){
+      this.$refs.input.getFiles()
     }
+  },
+  component: {
+    FilePond
   }
 }
 </script>
