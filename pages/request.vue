@@ -278,8 +278,15 @@ export default {
       const provider = new this.$fireAuthObj.GoogleAuthProvider()
 
       this.$fireAuth.signInWithPopup(provider).then((result) => {
-        this.$store.dispatch("user/setUser", result.user)
-        this.form.email_id = result.user.email
+        const { email } = result.user
+        const domain = "daiict.ac.in"
+
+        if(email.includes(domain, email.length - domain.length)){
+          this.$store.dispatch("user/setUser", result.user)
+          this.form.email_id = result.user.email
+        } else {
+          alert("Please sign in with daiict.ac.in to proceed")
+        }
       }).catch((error) => {
         console.log(error)
       })
