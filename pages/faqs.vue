@@ -98,6 +98,17 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  head(){
+    return {
+      title: "FAQs | Student Emergency Fund"
+    }
+  }
+}
+</script>
+
 <style scoped>
 .landing-banner {
   min-height: 300px;

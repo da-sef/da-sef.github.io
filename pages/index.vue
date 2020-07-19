@@ -79,7 +79,12 @@
 <script>
 
 export default {
-  name: "Home"
+  name: "Home",
+  head(){
+    return {
+      title: "Student Emergency Fund"
+    }
+  }
 }
 </script>
 

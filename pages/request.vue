@@ -291,6 +291,7 @@ export default {
   },
   head(){
     return {
+      title: "Request Help | Student Emergency Fund",
       link: [
         {
           rel: "stylesheet",

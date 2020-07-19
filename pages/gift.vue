@@ -135,6 +135,7 @@ export default {
   },
   head(){
     return {
+      title: "Make a Gift | Student Emergency Fund",
       script: [
         {
           hid: "razorpay",
