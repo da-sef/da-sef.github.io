@@ -8,54 +8,57 @@
         <h2 v-show="!ui_rendered">
           Sign-in with daiict.ac.in domain to avail the funds.
         </h2>
-        <div v-show="ui_rendered && !verified" hidden>
-          Sign-in with daiict.ac.in domain to avail the funds.
-        </div>
         <div class="request-form">
-          <form>
+          <form @submit.prevent="submit">
             <h4
               class="form-label"
             >
               Personal Information
             </h4>
             <input
+              v-model="form.sid"
               type="text"
               placeholder="SID"
               class="form-field"
               required
             ><br>
             <input
+              v-model="form.full_name"
               type="text"
               placeholder="Full Name"
               class="form-field"
               required
             ><br>
             <input
+              v-model="form.email_id"
               type="text"
               placeholder="DA-IICT Email Id"
               class="form-field"
-              :value="form.email"
               required
             ><br>
             <input
+              v-model="form.personal_number"
               type="text"
               placeholder="Personal Contact Number"
               class="form-field"
               required
             >
             <input
+              v-model="form.guardian_number"
               type="text"
               placeholder="Guardian Contact Number"
               class="form-field"
               required
             ><br>
             <input
+              v-model="form.local_address"
               type="text"
               placeholder="Local Address"
               class="form-field"
               required
             >
             <input
+              v-model="form.permanent_address"
               type="text"
               placeholder="Permanent Address"
               class="form-field"
@@ -68,6 +71,7 @@
             </h4>
             <label>
               <input
+                v-model="form.scholarship_this_year"
                 name="scholarship"
                 type="radio"
                 value="yes"
@@ -75,6 +79,7 @@
             </label>
             <label>
               <input
+                v-model="form.scholarship_this_year"
                 name="scholarship"
                 type="radio"
                 value="no"
@@ -87,6 +92,7 @@
             </h4>
             <label>
               <input
+                v-model="form.sef_before"
                 name="sef"
                 type="radio"
                 value="yes"
@@ -94,6 +100,7 @@
             </label>
             <label>
               <input
+                v-model="form.sef_before"
                 name="sef"
                 type="radio"
                 value="no"
@@ -105,6 +112,7 @@
               Amount of funds requested from Student Emergency Fund (in Indian Rupee)
             </h4>
             <input
+              v-model="form.amount"
               type="number"
               placeholder="Amount"
               class="form-field"
@@ -118,6 +126,7 @@
               Please describe what led to your emergent financial need, providing as much detail as you arecomfortable providing.
             </h4>
             <textarea
+              v-model="form.q_descneed"
               rows="4"
               class="form-textarea"
             />
@@ -128,6 +137,7 @@
               Please explain in detail what the funds will be used for.
             </h4>
             <textarea
+              v-model="form.q_whatfor"
               rows="4"
               class="form-textarea"
             />
@@ -138,6 +148,7 @@
               Please describe the specific impact of the emergency on your ability to be a student.
             </h4>
             <textarea
+              v-model="form.q_impact"
               rows="4"
               class="form-textarea"
             />
@@ -148,6 +159,7 @@
               Please describe your efforts to obtain assistance to address your needs through other sources(family, friends, campus/community organizations, etc.)
             </h4>
             <textarea
+              v-model="form.q_efforts"
               rows="4"
               class="form-textarea"
             />
@@ -158,6 +170,7 @@
               What do you plan to do to return to financial stability after receiving help to prevent a pattern?
             </h4>
             <textarea
+              v-model="form.q_plan"
               rows="4"
               class="form-textarea"
             /><br>
@@ -199,6 +212,12 @@
               </span>
               <FileUpload />
             </div>
+            <button
+              class="sef-btn"
+              type="submit"
+            >
+              Submit
+            </button>
           </form>
         </div>
       </section>
@@ -251,11 +270,15 @@ export default {
 
     this.$fireAuth.signInWithPopup(provider).then((result) => {
       this.$store.dispatch("user/setUser", result.user)
+      this.form.email_id = result.user.email
     }).catch((error) => {
       console.log(error)
     })
   },
   methods: {
+    submit(){
+      console.log({ ...this.form })
+    },
     fileChange(e){
       console.log(e.target.files[0])
       const fileList = e.target.files
