@@ -71,18 +71,19 @@ export default {
   axios: {},
   firebase: {
     config: {
-      apiKey: "AIzaSyDcaguozmiEDHdLmKZMwPH2rPgTN5SvVjg",
-      authDomain: "dasef-68ba5.firebaseapp.com",
-      databaseURL: "https://dasef-68ba5.firebaseio.com",
-      projectId: "dasef-68ba5",
-      storageBucket: "dasef-68ba5.appspot.com",
-      messagingSenderId: "923884417325",
-      appId: "1:923884417325:web:47eeba7214573701cea3a4",
-      measurementId: "G-YLFQYS59N1"
+      apiKey: "AIzaSyAtRuRsotd-i7wCc_qfsD4kdszKHvq2gvo",
+      authDomain: "da-sef.firebaseapp.com",
+      databaseURL: "https://da-sef.firebaseio.com",
+      projectId: "da-sef",
+      storageBucket: "da-sef.appspot.com",
+      messagingSenderId: "377482598195",
+      appId: "1:377482598195:web:6dbee9592c559701afd046",
+      measurementId: "G-XNNGWSJ4ZD"
     },
     services: {
       auth: true,
-      storage: true
+      storage: true,
+      firestore: true
     }
   },
   /*
