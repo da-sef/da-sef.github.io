@@ -266,7 +266,7 @@ export default {
   },
   methods: {
     submit(){
-      console.log({ ...this.form, ...this.user })
+      console.log({ ...this.form, user: { ...this.user } })
     },
     google_sign_in(){
       const provider = new this.$fireAuthObj.GoogleAuthProvider()
@@ -286,7 +286,7 @@ export default {
       })
     },
     fileUpdateHandler(files){
-      this.attachments = files
+      this.form.attachments = files
     }
   },
   head(){
