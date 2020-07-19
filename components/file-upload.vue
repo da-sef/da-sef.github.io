@@ -75,7 +75,6 @@ export default {
             progress(true, snapshot.bytesTransferred, snapshot.totalBytes)
           },
           function(e){
-            console.log(e)
             self.handleError(error, e)
           },
           function(){
@@ -91,7 +90,6 @@ export default {
           }
         }
       } catch(e){
-        console.log(e)
         this.handleError(error, e)
 
         return {
@@ -103,11 +101,8 @@ export default {
     },
     revert(uniqueFileId, load, error){
       const self = this
-      console.log("revert")
 
-      const desertRef = this.$fireStore.ref().child(uniqueFileId)
-      desertRef
-        .delete()
+      this.$fireStorage.ref().child(uniqueFileId).delete()
         .then(function(){
           const index = self.files.indexOf(uniqueFileId)
           if(index > -1){
@@ -121,15 +116,12 @@ export default {
         })
     },
     load(uniqueFileId, load, error){
-      console.log("load")
       error()
     },
     fetch(url, load, error, progress, abort, headers){
-      console.log("fetch")
       error("Solo archivos locales")
     },
     restore(uniqueFileId, load, error, progress, abort, headers){
-      console.log("restore")
       error()
     },
     handleError(error, e){
