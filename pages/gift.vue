@@ -133,28 +133,26 @@ export default {
       rzp1.open()
     }
   },
-  head(){
-    return {
-      title: "Make a Gift | Student Emergency Fund",
-      script: [
-        {
-          hid: "razorpay",
-          src: "https://checkout.razorpay.com/v1/razorpay.js",
-          defer: true,
-          callback: () => {
-            console.log("Razorpay loaded")
-          }
-        },
-        {
-          hid: "checkout",
-          src: "https://checkout.razorpay.com/v1/checkout.js",
-          defer: true,
-          callback: () => {
-            console.log("Checkout loaded")
-          }
+  head: {
+    title: "Make a Gift | Student Emergency Fund",
+    script: [
+      {
+        hid: "razorpay",
+        src: "https://checkout.razorpay.com/v1/razorpay.js",
+        defer: true,
+        callback: () => {
+          console.log("Razorpay loaded")
         }
-      ]
-    }
+      },
+      {
+        hid: "checkout",
+        src: "https://checkout.razorpay.com/v1/checkout.js",
+        defer: true,
+        callback: () => {
+          console.log("Checkout loaded")
+        }
+      }
+    ]
   }
 }
 </script>

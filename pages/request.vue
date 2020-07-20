@@ -219,7 +219,7 @@
             </button>
           </form>
         </div>
-        <div class="thank-you-wrapper" v-if="submitted">
+        <div v-if="submitted" class="thank-you-wrapper">
           <h2>
             Thank you for filling out the form. You'll be hearing from us
             very soon.
