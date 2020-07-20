@@ -5,7 +5,7 @@
         <h1>Emergency Fund Application</h1>
       </div>
       <section class="main-content">
-        <div v-show="!user.loggedIn" class="sign-in-wrapper">
+        <div v-show="!user.loggedIn && !submitted" class="sign-in-wrapper">
           <h2>
             Sign-in with daiict.ac.in domain to avail the funds.
           </h2>
@@ -13,7 +13,7 @@
             <img src="/google/btn_google_signin_light_normal_web.png">
           </button>
         </div>
-        <div v-if="user.loggedIn" class="request-form">
+        <div v-if="user.loggedIn && !submitted" class="request-form">
           <form @submit.prevent="submit">
             <h4
               class="form-label"
@@ -219,6 +219,12 @@
             </button>
           </form>
         </div>
+        <div class="thank-you-wrapper" v-if="submitted">
+          <h2>
+            Thank you for filling out the form. You'll be hearing from us
+            very soon.
+          </h2>
+        </div>
       </section>
     </div>
   </div>
@@ -235,7 +241,7 @@ export default {
   data(){
     return {
       uploadTask: "",
-      ui_rendered: true,
+      submitted: false,
       form: {
         sid: "",
         full_name: "",
@@ -266,7 +272,15 @@ export default {
   },
   methods: {
     submit(){
-      console.log({ ...this.form, user: { ...this.user } })
+      const payload = { ...this.form, user: { ...this.user } }
+
+      this.$fireStore.collection("submissions").add(payload)
+        .then((ref) => {
+          this.submitted = true
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     },
     google_sign_in(){
       const provider = new this.$fireAuthObj.GoogleAuthProvider()
