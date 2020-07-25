@@ -79,7 +79,10 @@
             DA-IICT may contact me at the email address above
           </span>
         </label><br>
-        <button class="sef-btn">
+        <div class="errors" v-show="errors.len > 0">
+          <span v-for="error in errors" :key="error">{{ error }}</span><br>
+        </div>
+        <button class="sef-btn" :disabled="btn_pressed">
           Make Donation
         </button>
       </form>
@@ -88,6 +91,8 @@
 </template>
 
 <script>
+import axios from "axios"
+
 const defaultOpt = {
   key: "rzp_test_UOq8piMTR8cjDM",
   currency: "INR",
@@ -108,6 +113,8 @@ export default {
     return {
       razorpayLoaded: false,
       checkoutpayLoaded: false,
+      btn_pressed: false,
+      errors: [],
       options: {
         amount: 100,
         prefill: {
@@ -126,11 +133,27 @@ export default {
   methods: {
     checkout(){
       const options = Object.assign(defaultOpt, this.options)
-      options.amount = options.amount * 100
-      const rzp1 = new Razorpay(options) // eslint-disable-line
+      const errors = []
 
-      console.log(options)
-      rzp1.open()
+      options.amount = options.amount * 100
+
+      this.btn_prevent = true
+      axios.get(`https://2tsmu1yjs1.execute-api.ap-south-1.amazonaws.com/generate-orderid?amount=${options.amount}`)
+        .then((resp) => {
+          const data = resp.data
+
+          options.order_id = data.orderid
+
+          const rzp1 = new Razorpay(options) // eslint-disable-line
+
+          console.log(options)
+          rzp1.open()
+        })
+        .catch((err) => {
+          console.log(err)
+          errors.push("Error occured, try again submitting.")
+          this.btn_prevent = false
+        })
     }
   },
   head: {
@@ -184,5 +207,10 @@ export default {
 hr {
   color: var(--border-grey);
   border-top: 1px solid var(--border-grey);
+}
+
+.errors {
+  color: crimson;
+  margin-bottom: 15px;
 }
 </style>
