@@ -55,20 +55,6 @@
             facilities (broadband internet, computer) is necessary to have
             access to their education.
           </p>
-          <h3>Assistance in tuition</h3>
-          <p>
-            Uncertainty in the job market affects students' families and leaves
-            them questioning whether they can afford to pursue an education.
-            This financial help gives them the opportunity to prioritize their
-            future and pursue an education.
-          </p>
-          <h3>Basic Needs</h3>
-          <p>
-            Issues related to food, housing insecurity are worsened during
-            times of crisis. Housing-insecure individuals can request grants from
-            our student emergency fund to help fill the gaps when they need it
-            most.
-          </p>
           <p><small><em>* this list is not exhaustive</em></small></p>
         </div>
       </section>
