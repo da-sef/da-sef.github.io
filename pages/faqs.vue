@@ -94,6 +94,21 @@
             </p>
           </div>
         </div>
+        <div class="faq-section">
+          <h2 class="faq-question">
+            Expenses not covered by the SEF? *
+          </h2>
+          <div class="faq-answer">
+            <p>
+              <ul>
+                <li>Anticipated expenses like recurring payments, loan repayments</li>
+                <li>Costs for entertainment, recreation, non-emergency travel or other non-essential expenses.</li>
+                <li>Tuition, fees, health insurance,travel grants and study abroad costs.</li>
+              </ul>
+            </p>
+          </div>
+          <p><small><em>* this list is not exhaustive</em></small></p>
+        </div>
       </section>
     </div>
   </div>
