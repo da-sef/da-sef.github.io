@@ -79,7 +79,7 @@
             DA-IICT may contact me at the email address above
           </span>
         </label><br>
-        <div class="errors" v-show="errors.len > 0">
+        <div v-show="errors.len > 0" class="errors">
           <span v-for="error in errors" :key="error">{{ error }}</span><br>
         </div>
         <button class="sef-btn" :disabled="btn_pressed">

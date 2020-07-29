@@ -55,20 +55,52 @@
               class="form-field"
               required
             ><br>
+            <h4
+              class="form-label"
+            >
+              Address
+            </h4>
             <input
-              v-model="form.local_address"
+              v-model="form.address.address1"
               type="text"
-              placeholder="Local Address"
+              class="form-field address-field"
+              required
+            ><br>
+            <input
+              v-model="form.address.address2"
+              type="text"
+              class="form-field address-field"
+              required
+            ><br>
+            <input
+              v-model="form.address.city"
+              type="text"
               class="form-field"
+              placeholder="City"
               required
             >
             <input
-              v-model="form.permanent_address"
+              v-model="form.address.state"
               type="text"
-              placeholder="Permanent Address"
               class="form-field"
+              placeholder="State"
+              required
+            >
+            <input
+              v-model="form.address.zip"
+              type="number"
+              class="form-field"
+              placeholder="Zip"
               required
             ><br>
+            <input
+              v-model="form.address.country"
+              name="country"
+              type="text"
+              class="form-field"
+              placeholder="Country"
+              required
+            >
             <h4
               class="form-label"
             >
@@ -90,6 +122,14 @@
                 value="no"
               > No
             </label><br>
+            <textarea
+              v-if="form.scholarship_this_year == 'yes'"
+              v-model="form.scholarship_info"
+              rows="2"
+              class="form-textarea"
+              placeholder="Details of scholarship"
+              required
+            />
             <h4
               class="form-label"
             >
@@ -195,19 +235,13 @@
               <label class="form-checkbox">
                 <input type="checkbox" required>
                 <span class="checkbox-text">
-                  I affirm that the information that I have provided in this application and any additional information that I provide in support of my request for emergency funds is complete, accurate and true, to the best of my knowledge. I also understand that providing false information may result in revocation of any award of emergency funds and/or referral to the Disciplinary Action Committee (DAC), DA-IICT for formal disciplinary action.
-                </span>
-              </label><br>
-              <label class="form-checkbox">
-                <input type="checkbox" required>
-                <span class="checkbox-text">
                   I understand that this application falls under the non-urgent category and will be received during normal business hours (M-F 8-5).
                 </span>
               </label>
             </div>
             <div class="form-attachment">
               <span class="attachment-text">
-                Attachment [Supporting Documentation- Photos, video, email, and other supporting documents may be attached below.]
+                Add Attachment [It is advisable to attach documents, photos etc. to prove or support your claims]
               </span>
               <FileUpload @filesUpdate="fileUpdateHandler" />
             </div>
@@ -248,9 +282,15 @@ export default {
         email_id: "",
         personal_number: "",
         guardian_number: "",
-        local_address: "",
-        permanent_address: "",
+        address: {
+          address1: "",
+          address2: "",
+          city: "",
+          state: "",
+          country: ""
+        },
         scholarship_this_year: "",
+        scholarship_info: "",
         sef_before: "",
         amount: 0,
         q_descneed: "",
@@ -349,6 +389,10 @@ export default {
 
 .form-label {
   margin: var(--space-1) 0 var(--space-0) 0;
+}
+
+.address-field {
+  width: 649px;
 }
 
 .form-textarea {
