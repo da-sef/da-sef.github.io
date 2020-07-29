@@ -1,11 +1,13 @@
 <template>
   <nav>
-    <router-link to="/">
-      <h1 class="navbar-brand">
+    <h1 class="navbar-brand">
+      <a href="//sbg.daiict.ac.in">
         <img class="logo" src="/da-logo.png">
+      </a>
+      <router-link to="/">
         <span>Student Emergency Fund</span>
-      </h1>
-    </router-link>
+      </router-link>
+    </h1>
     <div class="skip" />
     <router-link to="/gift">
       <span class="navbar-item">
@@ -45,7 +47,14 @@ nav {
   display: flex;
   align-items: center;
   font-size: var(--size-4);
+}
+
+.navbar-brand span {
   color: var(--text-black);
+}
+
+.navbar-brand a:hover {
+  text-decoration: none;
 }
 
 .skip {
