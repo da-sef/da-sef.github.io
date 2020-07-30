@@ -44,7 +44,12 @@
           </h2>
           <div class="faq-answer">
             <p>
-              Your gift will support emergency grants for students to assist with technology needs related to distance learning, basic needs, immediate financial needs and against other hardship faced during crisis. Your gift will be administered through the Student Emergency Fund Committee after a thorough review in accordance with institute approved methodology.
+              Your gift will support emergency grants for students in need of e-infrastructure facilities for
+              distance learning and are not able to afford them due to financial constraints or hardships faced
+              due to the pandemic. Your Gift will be used after the Student Emergency Fund
+              Committee(consisting of students representatives, alumni and institute representatives) have a
+              thorough application review in accordance with institute approved Application Review
+              Methodology to maintain fairness and unambiguity.
             </p>
           </div>
         </div>
