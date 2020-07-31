@@ -67,6 +67,15 @@ a:hover, link:hover {
   text-decoration: underline;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: revert;
+  font-weight: revert;
+}
+
+p {
+  margin: revert;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
