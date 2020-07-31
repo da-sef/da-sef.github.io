@@ -30,16 +30,6 @@
         </div>
         <div class="faq-section">
           <h2 class="faq-question">
-            Is my contribution tax-deductible?
-          </h2>
-          <div class="faq-answer">
-            <p>
-              Yes! You may be able to claim a charitable deduction for your gift.
-            </p>
-          </div>
-        </div>
-        <div class="faq-section">
-          <h2 class="faq-question">
             How will my gift be used?
           </h2>
           <div class="faq-answer">
