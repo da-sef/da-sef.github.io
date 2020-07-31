@@ -21,27 +21,43 @@
               Personal Information
             </h4>
             <input
+              v-show="!preview"
               v-model="form.sid"
               type="text"
               placeholder="SID"
               class="form-field"
               required
             ><br>
+            <div v-show="preview">
+              <strong>SID: </strong>
+              <span>{{ form.sid }}</span>
+            </div>
             <input
+              v-show="!preview"
               v-model="form.full_name"
               type="text"
               placeholder="Full Name"
               class="form-field"
               required
             ><br>
+            <div v-show="preview">
+              <strong>Full Name: </strong>
+              <span>{{ form.full_name }}</span>
+            </div>
             <input
+              v-show="!preview"
               v-model="form.email_id"
               type="text"
               placeholder="DA-IICT Email Id"
               class="form-field"
               required
             ><br>
+            <div v-show="preview">
+              <strong>Email address: </strong>
+              <span>{{ form.email_id }}</span>
+            </div>
             <input
+              v-show="!preview"
               v-model="form.personal_number"
               type="text"
               placeholder="Personal Contact Number"
@@ -49,132 +65,192 @@
               required
             >
             <input
+              v-show="!preview"
               v-model="form.guardian_number"
               type="text"
               placeholder="Guardian Contact Number"
               class="form-field"
               required
             ><br>
-            <h4
-              class="form-label"
-            >
-              Address
-            </h4>
-            <input
-              v-model="form.address.address1"
-              type="text"
-              class="form-field address-field"
-              required
-            ><br>
-            <input
-              v-model="form.address.address2"
-              type="text"
-              class="form-field address-field"
-              required
-            ><br>
-            <input
-              v-model="form.address.city"
-              type="text"
-              class="form-field"
-              placeholder="City"
-              required
-            >
-            <input
-              v-model="form.address.state"
-              type="text"
-              class="form-field"
-              placeholder="State"
-              required
-            >
-            <input
-              v-model="form.address.zip"
-              type="number"
-              class="form-field"
-              placeholder="Zip"
-              required
-            ><br>
-            <input
-              v-model="form.address.country"
-              name="country"
-              type="text"
-              class="form-field"
-              placeholder="Country"
-              required
-            >
-            <h4
-              class="form-label"
-            >
-              Have you applied for any scholarship this year?
-            </h4>
-            <label>
-              <input
-                v-model="form.scholarship_this_year"
-                name="scholarship"
-                type="radio"
-                value="yes"
-              > Yes
-            </label>
-            <label>
-              <input
-                v-model="form.scholarship_this_year"
-                name="scholarship"
-                type="radio"
-                value="no"
-              > No
-            </label><br>
-            <textarea
-              v-if="form.scholarship_this_year == 'yes'"
-              v-model="form.scholarship_info"
-              rows="2"
-              class="form-textarea"
-              placeholder="Details of scholarship"
-              required
-            />
-            <h4
-              class="form-label"
-            >
-              Have you received funds from the Student Emergency Fund before?
-            </h4>
-            <label>
-              <input
-                v-model="form.sef_before"
-                name="sef"
-                type="radio"
-                value="yes"
-              > Yes
-            </label>
-            <label>
-              <input
-                v-model="form.sef_before"
-                name="sef"
-                type="radio"
-                value="no"
-              > No
-            </label><br>
-            <h4
-              class="form-label"
-            >
-              Amount of funds requested from Student Emergency Fund (in Indian Rupee)
-            </h4>
-            <input
-              v-model="form.amount"
-              type="number"
-              placeholder="Amount"
-              class="form-field"
-              required
-            >
-            <span>INR</span>
+            <div v-show="preview">
+              <strong>Personal Contact Number: </strong>
+              <span>{{ form.personal_number }}</span>
+            </div>
+            <div v-show="preview">
+              <strong>Guardian Contact Number: </strong>
+              <span>{{ form.guardian_number }}</span>
+            </div>
             <br>
+            <div v-show="!preview">
+              <h4
+                class="form-label"
+              >
+                Address
+              </h4>
+              <input
+                v-model="form.address.address1"
+                type="text"
+                class="form-field address-field"
+                required
+              ><br>
+              <input
+                v-model="form.address.address2"
+                type="text"
+                class="form-field address-field"
+                required
+              ><br>
+              <input
+                v-model="form.address.city"
+                type="text"
+                class="form-field"
+                placeholder="City"
+                required
+              >
+              <input
+                v-model="form.address.state"
+                type="text"
+                class="form-field"
+                placeholder="State"
+                required
+              >
+              <input
+                v-model="form.address.zip"
+                type="number"
+                class="form-field"
+                placeholder="Zip"
+                required
+              ><br>
+              <input
+                v-model="form.address.country"
+                name="country"
+                type="text"
+                class="form-field"
+                placeholder="Country"
+                required
+              >
+            </div>
+            <div v-show="preview">
+              <strong>Address: </strong><br>
+              <span>{{ form.address.address1 }}</span><br>
+              <span>{{ form.address.address2 }}</span><br>
+              <span>{{ form.address.city }}, {{ form.address.state }}, {{ form.address.zip }}, {{ form.address.country }}</span>
+            </div>
+            <br>
+            <div v-show="!preview">
+              <h4
+                class="form-label"
+              >
+                Have you applied for any scholarship this year?
+              </h4>
+              <label>
+                <input
+                  v-model="form.scholarship_this_year"
+                  name="scholarship"
+                  type="radio"
+                  value="yes"
+                  required
+                > Yes
+              </label>
+              <label>
+                <input
+                  v-model="form.scholarship_this_year"
+                  name="scholarship"
+                  type="radio"
+                  value="no"
+                  required
+                > No
+              </label><br>
+              <textarea
+                v-show="!preview"
+                v-if="form.scholarship_this_year == 'yes'"
+                v-model="form.scholarship_info"
+                rows="2"
+                class="form-textarea"
+                placeholder="Details of scholarship"
+                required
+              />
+            </div>
+            <div v-show="preview">
+              <strong>
+                Have you applied for any scholarship this year?
+              </strong>
+              <span>{{ form.scholarship_this_year }}</span>
+              <br>
+              <p>{{ form.scholarship_info }}</p>
+            </div>
+            <div v-show="!preview">
+              <h4
+                class="form-label"
+              >
+                Have you received funds from the Student Emergency Fund before?
+              </h4>
+              <label
+                v-show="!preview"
+              >
+                <input
+                  v-model="form.sef_before"
+                  name="sef"
+                  type="radio"
+                  value="yes"
+                  required
+                > Yes
+              </label>
+              <label
+                v-show="!preview"
+              >
+                <input
+                  v-model="form.sef_before"
+                  name="sef"
+                  type="radio"
+                  value="no"
+                  required
+                > No
+              </label><br>
+            </div>
+            <div v-show="preview">
+              <strong>
+                Have you received funds from the Student Emergency Fund before?
+              </strong>
+              <span>{{ form.sef_before }}</span>
+            </div>
+            <div v-show="!preview">
+              <h4
+                class="form-label"
+              >
+                Amount of funds requested from Student Emergency Fund (in Indian Rupee)
+              </h4>
+              <input
+                v-show="!preview"
+                v-model="form.amount"
+                type="number"
+                placeholder="Amount"
+                class="form-field"
+                required
+              >
+              <span>INR</span>
+            </div>
+            <br>
+            <div v-show="preview">
+              <strong>
+                Requested Funds:
+              </strong>
+              <span>{{ form.amount }} INR</span>
+            </div>
             <h4
               class="form-label"
             >
               Please describe what led to your emergent financial need, providing as much detail as you are comfortable providing.
             </h4>
             <textarea
+              v-show="!preview"
               v-model="form.q_descneed"
               rows="4"
               class="form-textarea"
+              required
             />
+            <div v-show="preview">
+              <span>{{ form.q_descneed }}</span>
+            </div>
             <br>
             <h4
               class="form-label"
@@ -182,10 +258,15 @@
               Please explain in detail what the funds will be used for.
             </h4>
             <textarea
+              v-show="!preview"
               v-model="form.q_whatfor"
               rows="4"
               class="form-textarea"
+              required
             />
+            <div v-show="preview">
+              <span>{{ form.q_whatfor }}</span>
+            </div>
             <br>
             <h4
               class="form-label"
@@ -193,10 +274,15 @@
               Please describe the specific impact of the emergency on your ability to be a student.
             </h4>
             <textarea
+              v-show="!preview"
               v-model="form.q_impact"
               rows="4"
               class="form-textarea"
+              required
             />
+            <div v-show="preview">
+              <span>{{ form.q_impact }}</span>
+            </div>
             <br>
             <h4
               class="form-label"
@@ -204,10 +290,15 @@
               Please describe your efforts to obtain assistance to address your needs through other sources (family, friends, campus/community organizations, etc.)
             </h4>
             <textarea
+              v-show="!preview"
               v-model="form.q_efforts"
               rows="4"
               class="form-textarea"
+              required
             />
+            <div v-show="preview">
+              <span>{{ form.q_efforts }}</span>
+            </div>
             <br>
             <h4
               class="form-label"
@@ -215,10 +306,16 @@
               What do you plan to do to return to financial stability after receiving help to prevent a pattern?
             </h4>
             <textarea
+              v-show="!preview"
               v-model="form.q_plan"
               rows="4"
               class="form-textarea"
-            /><br>
+              required
+            />
+            <div v-show="preview">
+              <span>{{ form.q_plan }}</span>
+            </div>
+            <br>
             <div class="mandatory-checkboxes">
               <label class="form-checkbox">
                 <input type="checkbox" required>
@@ -245,9 +342,18 @@
               </span>
               <FileUpload @filesUpdate="fileUpdateHandler" />
             </div>
+            <div v-show="errors.len > 0" class="errors">
+              <span v-for="error in errors" :key="error">{{ error }}</span><br>
+            </div>
+            <button
+              type="button"
+              class="sef-btn"
+              @click="togglePreview"
+            >
+              {{ preview ? "Edit" : "Preview" }}
+            </button>
             <button
               class="sef-btn"
-              type="submit"
             >
               Submit
             </button>
@@ -276,6 +382,8 @@ export default {
     return {
       uploadTask: "",
       submitted: false,
+      errors: [],
+      preview: false,
       form: {
         sid: "",
         full_name: "",
@@ -311,8 +419,35 @@ export default {
     }
   },
   methods: {
+    togglePreview(){
+      this.preview = !this.preview
+      return false
+    },
+    trim(text){
+      console.log(text)
+      return text.replace(/^\s+|\s+$/gm, "")
+    },
     submit(){
+      this.errors = []
+
       const payload = { ...this.form, user: { ...this.user } }
+
+      for(const key in payload){
+        if(key === "address"){
+          for(const k1 in payload.address){
+            payload.address[k1] = this.trim(payload.address[k1])
+          }
+
+          continue
+        } else if(key === "attachments" ||
+          key === "user" ||
+          key === "amount"
+        ){
+          continue
+        }
+
+        payload[key] = this.trim(payload[key])
+      }
 
       this.$fireStore.collection("submissions").add(payload)
         .then((ref) => {
@@ -413,5 +548,10 @@ export default {
 .attachment-text {
   display: inline-block;
   margin: var(--space-0) 0;
+}
+
+.errors {
+  color: crimson;
+  margin-bottom: 15px;
 }
 </style>
