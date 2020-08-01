@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="page-wrapper">
+    <div class="page-wrapper p-5">
       <h2 class="title">
         Make a Gift
       </h2>

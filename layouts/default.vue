@@ -1,18 +1,23 @@
 <template>
-  <div id="app">
+  <div id="app" class="flex flex-col">
     <div>
       <Navbar />
     </div>
-    <Nuxt />
+    <div class="flex-1">
+      <Nuxt />
+    </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/navbar.vue"
+import Footer from "@/components/footer.vue"
 
 export default {
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
 }
 </script>
@@ -44,6 +49,10 @@ export default {
   color: var(--text-black);
 }
 
+body, html, #app, #__nuxt, #__layout {
+  height: 100%;
+}
+
 .page {
   display: grid;
   grid-row-gap: 50px;
@@ -54,6 +63,13 @@ export default {
   grid-column-start: 2;
   grid-column-end: 3;
   margin-bottom: var(--space-4);
+}
+
+@media (max-width: 768px){
+  .page-wrapper {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
 }
 
 a, .link {

@@ -25,8 +25,8 @@
           </div>
         </div>
       </div>
-      <section class="information">
-        <div class="information-wrapper">
+      <section class="information md:p-0">
+        <div class="information-wrapper md:p-0">
           <h1>Help in Critical Time</h1>
           <p>
             During this unprecedented time of global uncertainty alumni and friends are asking how to help DA-IICT students who are struggling to cover sudden costs related to access to technology for online learning and other emergency expenses.

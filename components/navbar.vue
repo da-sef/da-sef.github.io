@@ -1,7 +1,7 @@
 <template>
   <nav>
     <h1 class="navbar-brand">
-      <a href="//sbg.daiict.ac.in">
+      <a href="http://sbg.daiict.ac.in">
         <img class="logo" src="/da-logo.png">
       </a>
       <router-link to="/">
@@ -9,21 +9,23 @@
       </router-link>
     </h1>
     <div class="skip" />
-    <router-link to="/gift">
-      <span class="navbar-item">
-        Make a Gift
-      </span>
-    </router-link>
-    <router-link to="/faqs">
-      <span class="navbar-item">
-        FAQs
-      </span>
-    </router-link>
-    <router-link to="/request">
-      <span class="navbar-item">
-        Request Help
-      </span>
-    </router-link>
+    <div class="md:flex hidden">
+      <router-link to="/gift">
+        <span class="navbar-item">
+          Make a Gift
+        </span>
+      </router-link>
+      <router-link to="/faqs">
+        <span class="navbar-item">
+          FAQs
+        </span>
+      </router-link>
+      <router-link to="/request">
+        <span class="navbar-item">
+          Request Help
+        </span>
+      </router-link>
+    </div>
   </nav>
 </template>
 
