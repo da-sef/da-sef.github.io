@@ -10,6 +10,13 @@
       <a href="http://sbg.daiict.ac.in" class="m-2" target="_blank">
         SBG
       </a>
+      <div class="skip"></div>
+      <span class="m-2">
+        Created by
+        <a href="https://github.com/sanket143" target="_blank">
+          Sanket Chaudhari
+        </a>
+      </span>
     </div>
   </footer>
 </template>
@@ -17,5 +24,9 @@
 <style>
 .footer {
   bottom: 0;
+}
+
+.skip {
+  flex: 1;
 }
 </style>
