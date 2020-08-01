@@ -94,13 +94,11 @@
             Expenses not covered by the SEF? *
           </h2>
           <div class="faq-answer">
-            <p>
-              <ul>
-                <li>Anticipated expenses like recurring payments, loan repayments</li>
-                <li>Costs for entertainment, recreation, non-emergency travel or other non-essential expenses.</li>
-                <li>Tuition, fees, health insurance,travel grants and study abroad costs.</li>
-              </ul>
-            </p>
+            <p>Anticipated expenses like:</p>
+            <ul>
+              <li>Recurring payments, loan repayments, costs for entertainment, recreation, non-emergency travel or other non-essential expenses.</li>
+              <li>Tuition, fees, health insurance,travel grants and study abroad costs.</li>
+            </ul>
           </div>
           <p><small><em>* this list is not exhaustive</em></small></p>
         </div>

@@ -53,6 +53,11 @@ body, html, #app, #__nuxt, #__layout {
   height: 100%;
 }
 
+ul {
+  list-style: disc;
+  padding-left: var(--space-3);
+}
+
 .page {
   display: grid;
   grid-row-gap: 50px;
