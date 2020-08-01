@@ -84,12 +84,35 @@ a:hover, link:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: revert;
-  font-weight: revert;
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-3xl;
+}
+
+h2 {
+  @apply text-2xl;
+}
+
+h3 {
+  @apply text-xl;
+}
+
+h4 {
+  @apply text-lg;
+}
+
+h5 {
+  @apply text-base;
+}
+
+h6 {
+  @apply text-sm;
 }
 
 p {
-  margin: revert;
+  @apply my-4;
 }
 
 /* Chrome, Safari, Edge, Opera */
