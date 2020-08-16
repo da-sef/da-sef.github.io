@@ -10,18 +10,18 @@
         </h2>
         <div class="action-buttons">
           <div class="btn-wrapper">
-            <router-link to="/gift">
+            <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
               <button class="sef-btn">
                 MAKE A GIFT
               </button>
-            </router-link>
+            </a>
           </div>
           <div class="btn-wrapper">
-            <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
+            <router-link to="/request">
               <button class="sef-btn">
                 REQUEST HELP
               </button>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -38,9 +38,11 @@
             gift of any amount. Thank you now and always for all that you are
             doing to help our DA-IICT students.
           </p>
-          <button class="sef-btn">
-            MAKE A GIFT
-          </button>
+          <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
+            <button class="sef-btn">
+              MAKE A GIFT
+            </button>
+          </a>
         </div>
         <div class="information-wrapper">
           <h1>Areas Student Emergency Fund will support*</h1>

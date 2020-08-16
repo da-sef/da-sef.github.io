@@ -10,21 +10,21 @@
     </h1>
     <div class="skip" />
     <div class="md:flex hidden">
-      <router-link to="/gift">
+      <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
         <span class="navbar-item">
           Make a Gift
         </span>
-      </router-link>
+      </a>
       <router-link to="/faqs">
         <span class="navbar-item">
           FAQs
         </span>
       </router-link>
-      <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
+      <router-link to="/request">
         <span class="navbar-item">
           Request Help
         </span>
-      </a>
+      </router-link>
     </div>
   </nav>
 </template>
