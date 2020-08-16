@@ -17,11 +17,11 @@
             </router-link>
           </div>
           <div class="btn-wrapper">
-            <router-link to="/request">
+            <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
               <button class="sef-btn">
                 REQUEST HELP
               </button>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>

@@ -20,11 +20,11 @@
           FAQs
         </span>
       </router-link>
-      <router-link to="/request">
+      <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
         <span class="navbar-item">
           Request Help
         </span>
-      </router-link>
+      </a>
     </div>
   </nav>
 </template>
