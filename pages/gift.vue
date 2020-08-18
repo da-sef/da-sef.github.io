@@ -4,88 +4,13 @@
       <h2 class="title">
         Make a Gift
       </h2>
-      <form @submit.prevent="checkout">
-        <input
-          v-model="options.prefill.name"
-          type="text"
-          placeholder="Full Name"
-          class="form-field"
-          required
-        ><br>
-        <input
-          v-model="options.notes.country"
-          type="text"
-          placeholder="Country"
-          class="form-field"
-          required
-        ><br>
-        <input
-          v-model="options.prefill.email"
-          type="email"
-          placeholder="Email"
-          class="form-field"
-          required
-        >
-        <input
-          v-model="options.prefill.contact"
-          type="tel"
-          placeholder="Phone Number"
-          class="form-field"
-          required
-        ><hr>
-        <input
-          v-model="options.amount"
-          type="number"
-          placeholder="Amount"
-          class="form-field"
-          required
-        >
-        <span>INR</span>
-        <br>
-
-        <select
-          v-model="options.notes.affiliation"
-          class="form-field"
-          required
-        >
-          <option value="daiict-current-student">
-            DA-IICT Current Student
-          </option>
-          <option value="daiict-alumnus">
-            DA-IICT Alumnus
-          </option>
-          <option value="daiict-current-staff">
-            DA-IICT Current Faculty/Staff
-          </option>
-          <option value="daiict-former-staff">
-            DA-IICT Former Faculty/Staff
-          </option>
-          <option value="parent">
-            Parent
-          </option>
-          <option value="friend">
-            Friend
-          </option>
-          <option value="corporation">
-            Corporation
-          </option>
-          <option value="foundation">
-            Foundation
-          </option>
-        </select><br>
-        <label class="form-checkbox">
-          <input v-model="options.notes.contactme" type="checkbox">
-          <span class="checkbox-text">
-            DA-IICT may contact me at the email address above
-          </span>
-        </label><br>
-        <div v-show="errors.len > 0" class="errors">
-          <span v-for="error in errors" :key="error">{{ error }}</span><br>
-        </div>
-        <button class="sef-btn" :disabled="btn_pressed">
-          Make Donation
-        </button>
-      </form>
+      <h3>
+        Use
+        <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view">
+          Razorpay
+        </a>
+        to make a donation.
+      </h3>
     </div>
   </div>
 </template>
@@ -174,6 +99,13 @@ export default {
         callback: () => {
           console.log("Checkout loaded")
         }
+      }
+    ],
+    meta: [
+      {
+        hid: "redirect",
+        "http-equiv": "refresh",
+        content: "0;URL='https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view'"
       }
     ]
   }
