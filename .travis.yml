@@ -5,7 +5,7 @@ install:
   - npm ci
 script:
   - npm run build
-  - npm run generate
+  - npm run export
 deploy:
   skip_cleanup: true
   local_dir: dist/
