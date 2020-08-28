@@ -449,6 +449,9 @@ export default {
         payload[key] = this.trim(payload[key])
       }
 
+      const date_now = new Date()
+      payload.timestamp = date_now.toString()
+
       this.$fireStore.collection("submissions").add(payload)
         .then((ref) => {
           this.submitted = true

@@ -10,7 +10,7 @@
       <a href="mailto:sef@daiict.ac.in" class="m-2" target="_blank">
         Contact Us
       </a>
-      <div class="skip"></div>
+      <div class="skip" />
     </div>
     <div class="text-center sm:text-left text-xs mt-5">
       <span class="m-2">
