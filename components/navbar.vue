@@ -5,16 +5,16 @@
         <img class="logo" src="/da-logo.png">
       </a>
       <router-link to="/">
-        <span>Student Emergency Fund</span>
+        <span>DA-IICT Emergency Fund</span>
       </router-link>
     </h1>
     <div class="skip" />
     <div class="md:flex hidden">
-      <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
+      <!--<a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
         <span class="navbar-item">
           Make a Gift
         </span>
-      </a>
+      </a>-->
       <router-link to="/faqs">
         <span class="navbar-item">
           FAQs

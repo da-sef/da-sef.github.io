@@ -3,19 +3,19 @@
     <div class="page-wrapper">
       <div class="landing-banner">
         <h1 class="banner-title">
-          STUDENT EMERGENCY FUND
+          DA-IICT EMERGENCY FUND
         </h1>
         <h2 class="banner-subtitle">
           Your support provides critical help to students in need
         </h2>
         <div class="action-buttons">
-          <div class="btn-wrapper">
+          <!-- <div class="btn-wrapper">
             <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
               <button class="sef-btn">
                 MAKE A GIFT
               </button>
             </a>
-          </div>
+          </div> -->
           <div class="btn-wrapper">
             <router-link to="/request">
               <button class="sef-btn">
@@ -38,14 +38,14 @@
             gift of any amount. Thank you now and always for all that you are
             doing to help our DA-IICT students.
           </p>
-          <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
+          <!-- <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
             <button class="sef-btn">
               MAKE A GIFT
             </button>
-          </a>
+          </a> -->
         </div>
         <div class="information-wrapper">
-          <h1>Areas Student Emergency Fund will support*</h1>
+          <h1>Areas DA-IICT Emergency Fund will support*</h1>
           <p>
             Students who need support and assistance can submit a request.
           </p>
@@ -70,7 +70,7 @@ export default {
   name: "Home",
   head(){
     return {
-      title: "Student Emergency Fund"
+      title: "DA-IICT Emergency Fund"
     }
   }
 }

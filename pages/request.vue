@@ -182,7 +182,7 @@
               <h4
                 class="form-label"
               >
-                Have you received funds from the Student Emergency Fund before?
+                Have you received funds from the DA-IICT Emergency Fund before?
               </h4>
               <label
                 v-show="!preview"
@@ -209,7 +209,7 @@
             </div>
             <div v-show="preview">
               <strong>
-                Have you received funds from the Student Emergency Fund before?
+                Have you received funds from the DA-IICT Emergency Fund before?
               </strong>
               <span>{{ form.sef_before }}</span>
             </div>
@@ -217,7 +217,7 @@
               <h4
                 class="form-label"
               >
-                Amount of funds requested from Student Emergency Fund (in Indian Rupee)
+                Amount of funds requested from DA-IICT Emergency Fund (in Indian Rupee)
               </h4>
               <input
                 v-show="!preview"
@@ -320,7 +320,7 @@
               <label class="form-checkbox">
                 <input type="checkbox" required>
                 <span class="checkbox-text">
-                  I understand that I may not be eligible for an award from the Student Emergency Fund, and will respect that decision.
+                  I understand that I may not be eligible for an award from the DA-IICT Emergency Fund, and will respect that decision.
                 </span>
               </label><br>
               <label class="form-checkbox">
@@ -483,7 +483,7 @@ export default {
   },
   head(){
     return {
-      title: "Request Help | Student Emergency Fund",
+      title: "Request Help | DA-IICT Emergency Fund",
       link: [
         {
           rel: "stylesheet",

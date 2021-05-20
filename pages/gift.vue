@@ -22,7 +22,7 @@ const defaultOpt = {
   key: "rzp_test_UOq8piMTR8cjDM",
   currency: "INR",
   name: "DA-IICT",
-  description: "Student Emergency Fund",
+  description: "DA-IICT Emergency Fund",
   image: "/da-logo.png",
   handler: (response) => {
     console.log(response)
@@ -82,7 +82,7 @@ export default {
     }
   },
   head: {
-    title: "Make a Gift | Student Emergency Fund",
+    title: "Make a Gift | DA-IICT Emergency Fund",
     script: [
       {
         hid: "razorpay",
