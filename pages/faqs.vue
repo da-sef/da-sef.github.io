@@ -11,13 +11,13 @@
           </h2>
           <div class="faq-answer">
             <div class="action-buttons">
-              <div class="btn-wrapper">
+              <!-- <div class="btn-wrapper">
                 <a href="https://pages.razorpay.com/pl_FRSXhOTnxzHOwt/view" target="_blank">
                   <button class="sef-btn">
                     MAKE A GIFT
                   </button>
                 </a>
-              </div>
+              </div> -->
               <div class="btn-wrapper">
                 <router-link to="/request">
                   <button class="sef-btn">
@@ -36,7 +36,7 @@
             <p>
               Your gift will support emergency grants for students in need of e-infrastructure facilities for
               distance learning and are not able to afford them due to financial constraints or hardships faced
-              due to the pandemic. Your Gift will be used after the Student Emergency Fund
+              due to the pandemic. Your Gift will be used after the DA-IICT Emergency Fund
               Committee(consisting of students representatives, alumni and institute representatives) have a
               thorough application review in accordance with institute approved Application Review
               Methodology to maintain fairness and unambiguity.
@@ -85,7 +85,7 @@
           </h2>
           <div class="faq-answer">
             <p>
-              Yes, there is a maximum amount that can be awarded to each applicant. This is decided by the Student Emergency Fund Committee from time-to-time but this knowledge should not worry the applicant and they should request for whatever fund they actually need.
+              Yes, there is a maximum amount that can be awarded to each applicant. This is decided by the DA-IICT Emergency Fund Committee from time-to-time but this knowledge should not worry the applicant and they should request for whatever fund they actually need.
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@
 export default {
   head(){
     return {
-      title: "FAQs | Student Emergency Fund"
+      title: "FAQs | DA-IICT Emergency Fund"
     }
   }
 }
