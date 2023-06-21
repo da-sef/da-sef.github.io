@@ -19,7 +19,7 @@
     "filepond-plugin-file-validate-type": "^1.2.5",
     "filepond-plugin-image-preview": "^4.6.4",
     "firebase": "^7.16.0",
-    "nuxt": "^2.13.0",
+    "nuxt": "^3.4.3",
     "vue-filepond": "^6.0.2"
   },
   "devDependencies": {
